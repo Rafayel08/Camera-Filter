@@ -1,0 +1,12 @@
+Python Version==3.10
+
+Requires OBS Studio Version 28 or above for Mac OS
+
+I'm not sure if this program works for Linux nor Windows.
+
+Required Libraries:
+pyvirtualcam==0.10.0
+opencv-python==4.6.0.66
+
+
+This program gets your camera's specifications and automatically starts up a OBS Virtual Camera. You can code a filter and input it in where it says to in the python script or you can use the given example one.
