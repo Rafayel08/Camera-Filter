@@ -13,6 +13,7 @@ with pyvirtualcam.Camera(width, height, fps=fps, fmt=PixelFormat.BGR, device="OB
     while True:
         #Input your filter between the while True and cam.send(frame):
         #In this example I put in a filter which traces an outline of anything that moves
+        #Beginning--
         ret, Prev_frame= cap.read()
         ret, Current_frame=cap.read()
         if not ret:
@@ -24,6 +25,7 @@ with pyvirtualcam.Camera(width, height, fps=fps, fmt=PixelFormat.BGR, device="OB
         ret, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY)
         contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         frame=cv2.drawContours(frame_diff, contours, -1, (0, 255, 0), 3)
+        #--End
 
         cam.send(frame)
 
